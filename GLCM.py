@@ -3,8 +3,7 @@ from skimage.color import rgb2gray
 
 def hidel_glcm(image, direction='east', distance=1):
 
-    #lines, columns = image.shape
-    lines, columns = 3, 3
+    lines, columns = image.shape
 
     glcm_matrix = []
     glcm_lines=0
@@ -121,10 +120,9 @@ def hidel_glcm(image, direction='east', distance=1):
         
         return glcm_matrix
 
+#Exemplos de uso:
 
-image = skm.imread('picos_nitido.jpg')
-image = rgb2gray(image)
-matrix = hidel_glcm(image, 'north', 3)
-matriz=[]
-
-print(matrix)
+#matriz = hidel_glcm(imagem, 'south', 1)
+#matriz = hidel_glcm(imagem, 'north', 2)
+#matriz = hidel_glcm(imagem, 'west', n)
+#matriz = hidel_glcm(imagwem) #somente o parametro 'imagem' passado pois existem valores padroes para os outros dois parametros
