@@ -1,5 +1,3 @@
-import skimage.io as skm 
-from skimage.color import rgb2gray
 
 def hidel_glcm(image, angle='east', distance=1):
 
@@ -234,13 +232,5 @@ def hidel_glcm(image, angle='east', distance=1):
 
     
 
-#Exemplos de uso:
-imagem = skm.imread('picos_nitido.jpg')
-imagem = rgb2gray(imagem)
-matriz = hidel_glcm(imagem, 'southwest', 1)
-print(matriz)
-#matriz = hidel_glcm(imagem, 'north', 2)
-#matriz = hidel_glcm(imagem, 'west', n)
-#matriz = hidel_glcm(imagwem) #somente o parametro 'imagem' passado pois existem valores padroes para os outros dois parametros
 
 
