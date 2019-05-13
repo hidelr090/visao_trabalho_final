@@ -1,5 +1,6 @@
 import skimage.io as skm 
 from skimage.color import rgb2gray
+from skimage.feature import greycomatrix, greycoprops
 
 def hidel_glcm(image, angle='east', distance=1):
 
@@ -231,16 +232,15 @@ def hidel_glcm(image, angle='east', distance=1):
                 glcm_matrix[reference][neighbour]+=1
         
         return glcm_matrix
-    
 
     
 
 #Exemplos de uso:
-imagem = skm.imread('picos_nitido.jpg')
-imagem = rgb2gray(imagem)
-matriz = hidel_glcm(imagem, 'north', 1)
+#imagem = skm.imread('picos_nitido.jpg')
+#imagem = rgb2gray(imagem)
+#matriz = hidel_glcm(imagem, 'north', 1)
 #matriz = hidel_glcm(imagem, 'north', 2)
 #matriz = hidel_glcm(imagem, 'west', n)
 #matriz = hidel_glcm(imagwem) #somente o parametro 'imagem' passado pois existem valores padroes para os outros dois parametros
 
-print(matriz)
+
