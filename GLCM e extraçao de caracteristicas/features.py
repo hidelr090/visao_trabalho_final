@@ -8,4 +8,3 @@ def homogeneity(image):
 
     return soma
 
-
