@@ -26,12 +26,12 @@ class HistoImage(object):
 		else:	
 			raise Exception('This image is already grayed out.')
 
-	def glcm(self, angle='east', distance=1, normalize=False):
+	def glcm(self, angle=0, distance=1, normalize=False):
 		if self.__type == 'RGB':
 			raise Exception('The image must be grayed out to apply the GLCM, for now.')
 		else:
 			print("Hidel function is running for {} angle, distance {} and normalize {}...".format(angle, distance, normalize))
-			return hidel_glcm(self.image, angle='east', distance=distance, normalize=normalize)
+			return hidel_glcm(self.image, angle=0, distance=distance, normalize=normalize)
 
 
 # ni = HistoImage('placa.jpeg')
