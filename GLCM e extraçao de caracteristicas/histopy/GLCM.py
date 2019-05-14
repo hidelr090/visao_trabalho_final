@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def hidel_glcm(image, angle='east', distance=1, normalize=False):
+def hidel_glcm(image, angle=0, distance=1, normalize=False):
 
 	lines, columns = image.shape
 
@@ -9,7 +9,7 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 	glcm_lines=0
 	glcm_columns=0
 	
-	if(angle=='east'):
+	if(angle==0):
 		
 		for i in range(lines):
 			for j in range(columns-distance):
@@ -38,7 +38,7 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
 		return glcm_matrix
 
-	if(angle=='west'):
+	'''if(angle=='west'):
 		for i in range(lines):
 			for j in range(distance, columns, 1):
 				reference = int(image[i][j])
@@ -64,9 +64,9 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 				glcm_matrix[reference][neighbour]+=1
 		if normalize == True:
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
-		return glcm_matrix
+		return glcm_matrix'''
 
-	if(angle == 'north'):
+	if(angle == 90):
 		for i in range(distance, lines, 1):
 			for j in range(columns):
 				reference = int(image[i][j])
@@ -95,7 +95,7 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
 		return glcm_matrix
 
-	if(angle == 'south'):
+	'''if(angle == 'south'):
 		for i in range(lines-distance):
 			for j in range(columns):
 				reference = int(image[i][j])
@@ -122,9 +122,9 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 				glcm_matrix[reference][neighbour]+=1
 		if normalize == True:
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
-		return glcm_matrix
+		return glcm_matrix'''
 	
-	if(angle == 'northwest'):
+	if(angle == 45):
 		for i in range(distance, lines, 1):
 			for j in range(distance, columns, 1):
 				reference = int(image[i][j])
@@ -153,7 +153,7 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
 		return glcm_matrix
 	
-	if(angle == 'northeast'):
+	if(angle == 135):
 		for i in range(distance, lines, 1):
 			for j in range(columns-distance):
 				reference = int(image[i][j])
@@ -182,7 +182,7 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
 		return glcm_matrix
 	
-	if(angle == 'southeast'):
+	'''if(angle == 'southeast'):
 		for i in range(lines-distance):
 			for j in range(columns-distance):
 				reference = int(image[i][j])
@@ -209,9 +209,9 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 				glcm_matrix[reference][neighbour]+=1
 		if normalize == True:
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
-		return glcm_matrix
+		return glcm_matrix'''
 	
-	if(angle == 'southwest'):
+	'''if(angle == 'southwest'):
 		for i in range(distance, lines, 1):
 			for j in range(distance, columns, 1):
 				reference = int(image[i][j])
@@ -239,7 +239,7 @@ def hidel_glcm(image, angle='east', distance=1, normalize=False):
 
 		if normalize == True:
 			return (glcm_matrix - np.min(glcm_matrix))/np.ptp(glcm_matrix)
-		return glcm_matrix
+		return glcm_matrix'''
 
 
 
