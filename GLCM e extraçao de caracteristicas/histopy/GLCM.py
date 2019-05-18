@@ -1,4 +1,9 @@
 import numpy as np
+from skimage.io import imsave
+from skimage.io import imread_collection, imread
+import os
+
+from skimage.color import rgb2gray
 
 
 def hidel_glcm(image, angle=0, distance=1, normalize=False):
@@ -242,5 +247,9 @@ def hidel_glcm(image, angle=0, distance=1, normalize=False):
 		return glcm_matrix'''
 
 
-
-
+def gray_255_scale(image):  
+    arr = np.zeros(image.shape)
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            arr[i][j] = int(round(image[i,j] * 255))
+    return arr
